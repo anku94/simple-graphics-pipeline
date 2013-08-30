@@ -1,0 +1,38 @@
+=============================
+Graphics - Assignment 3
+Graphics Pipeline
+-----------------------------
+Ankush Jain
+201101010
+=============================
+
+Graphics Pipeline implemented in C [Model-View-Projection-Viewport]
+
+
+* Main.cpp [Compiled to ./main] and alternate.cpp [Compiled to ./alternate] are two examples, using sgl.h library. The .h file also contains all the definitions.
+
+*** Alternate.cpp borrowed from DC++ (couldn't write a decent example in time).
+
+Main function should begin with 
+	
+	init();
+
+Suggested Projection/Viewport matrix parameters are (these functions should be called right after init):
+
+	sglViewport(0, 0, 400, 400);
+        sglProjFrustum(-0.1,0.1, -0.1, 0.1, 0.1, 100) or sglOrthoProj(a,b,c,d,e,f);
+
+IMPORTANT - THIS LINE IS REQUIRED RIGHT AFTER INIT:
+	
+	sglStack.PushMatrix(viewMatrix);
+
+The drawScene function should begin with
+
+	sglModLoadIdentity();
+        sglViewLoadIdentity();
+	
+and end with
+	
+	sglShow();
+
+A PLY file by the name of plyFile.txt will be generated.
